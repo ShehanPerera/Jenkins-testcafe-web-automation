@@ -1,0 +1,32 @@
+{
+  "name": "mSpace",
+  "version": "1.0.0",
+  "mspace": "https://da-mspace.hsenidmobile.com/registration-v3/",
+  "scripts": {
+    "testChrome": "cucumber-js --world-parameters {\\\"browsers\\\":[\\\"chrome\\\"]\\,\\\"exampleUrl\\\":\\\"$npm_package_testCafeExamplePageUrl\\\"\\,\\\"mspace\\\":\\\"$npm_package_mspace\\\"\\} --format json:reports/Chrome.json",
+    "testHeadLess": "cucumber-js --world-parameters {\\\"browsers\\\":[\\\"chrome:headless\\\"]\\,\\\"exampleUrl\\\":\\\"$npm_package_testCafeExamplePageUrl\\\"\\,\\\"mspace\\\":\\\"$npm_package_mspace\\\"\\} --format json:reports/Chrome.json",
+    "generateHtmlReport": "rm -rf reports/combined && node src/reporters/html/prepareJson.js && node src/reporters/html/generateHtml.js",
+    "testPercy": "percy exec -- cucumber-js --world-parameters {\\\"browsers\\\":[\\\"chrome\\\"]\\,\\\"exampleUrl\\\":\\\"$npm_package_testCafeExamplePageUrl\\\"\\,\\\"mspace\\\":\\\"$npm_package_mspace\\\"\\} --format json:reports/Chrome.json"
+  },
+  "bin": {
+    "gherkin-testcafe": "./node_modules/.bin/gherkin-javascript",
+    "cucumber-js": "./node_modules/.bin/cucumber-js"
+  },
+  "dependencies": {
+    "csv-parser": "^2.3.0",
+    "csvtojson": "^2.0.10",
+    "mongodb": "^3.3.2",
+    "testcafe": "1.8.8",
+    "testcafe-reporter-html": "^1.4.4"
+  },
+  "devDependencies": {
+    "@percy/testcafe": "^0.1.0",
+    "cucumber": "^6.0.3",
+    "cucumber-html-reporter": "^5.0.2",
+    "cucumber-junit": "^1.7.1",
+    "dotenv": "^8.2.0",
+    "multiple-cucumber-html-reporter": "^1.13.1",
+    "mysql": "^2.17.1",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

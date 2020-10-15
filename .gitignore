@@ -1,0 +1,5 @@
+.env
+reports/
+node_modules/
+.idea/
+.env
